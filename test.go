@@ -1,36 +1,28 @@
 package main
 
+import "fmt"
+
 func main() {
 
-	var password string = "ac"
+	// array
+	var a [5]int
+	var b [5]string
+	c := [5]int{1, 2, 3, 4, 5}
+	var d [2][3]int // 2차원
 
-	switch password {
-	case "Ac":
-		{
-			print("success")
-		}
-	case "ac":
-		{
-			print("fail")
-		}
-	}
+	a[0] = 100
+	a[4] = 200
 
-	print(add(1, 2))
+	fmt.Println(a)
+	fmt.Println(b)
+	fmt.Println(c)
+	fmt.Println(d)
 
-	println(addAll(11, 2, 3, 4, 5))
+	// slice
+	var aSlice []int
+	var bSlice []string
 
-}
+	s := make([]int, 3)
+	fmt.Println(aSlice, bSlice, s)
 
-func add(a int, b int) int {
-	return 1
-}
-
-func addAll(li ...int) int {
-	result := 0
-	for idx, n := range li {
-		println("hi: ", idx, n)
-		result += n
-	}
-
-	return result
 }
