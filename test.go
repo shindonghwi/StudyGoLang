@@ -1,25 +1,27 @@
 package main
 
-type person struct {
-	name string
-	age  int
-	job  string
-}
+import (
+	"errors"
+	"fmt"
+	"os"
+)
 
 func main() {
 
-	var myList []person
-	println(myList)
+	var f, err = os.Create("./defer.txt")
 
-	s1 := person{name: "DongHwi1", age: 31, job: "Developer1"}
-	s2 := person{name: "DongHwi2", age: 32, job: "Developer2"}
-	s3 := person{name: "DongHwi3", age: 33, job: "Developer3"}
-
-	myList = append(myList, s1)
-	myList = append(myList, s2)
-	myList = append(myList, s3)
-
-	for i, p := range myList {
-		println("hello: ", i, p.name)
+	if err != nil {
+		panic(err)
 	}
+
+	defer f.Close()
+
+	fmt.Fprintln(f, "something")
+}
+
+func a(b int) (int, error) {
+	if b >= 10 {
+		return -1, errors.New("Don't Exists")
+	}
+	return b, nil
 }
