@@ -2,18 +2,35 @@ package main
 
 func main() {
 
-	for i := 0; i < 5; i++ {
-		println("data: ", i)
+	var password string = "ac"
+
+	switch password {
+	case "Ac":
+		{
+			print("success")
+		}
+	case "ac":
+		{
+			print("fail")
+		}
 	}
 
-	var payType string = "card"
+	print(add(1, 2))
 
-	if payType == "card" {
-		println("this is card")
-	} else if payType == "cash" {
-		println("this is cash")
-	} else {
-		println("this is else")
+	println(addAll(11, 2, 3, 4, 5))
+
+}
+
+func add(a int, b int) int {
+	return 1
+}
+
+func addAll(li ...int) int {
+	result := 0
+	for idx, n := range li {
+		println("hi: ", idx, n)
+		result += n
 	}
 
+	return result
 }
