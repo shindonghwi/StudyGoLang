@@ -7,7 +7,19 @@ import (
 
 func main() {
 
-	work("hello world")
+	// work("programmer")
+	// work("designer")
+	// work("producer")
+	// work("markerter")
+
+	go work("programmer")
+	go work("designer")
+	go work("producer")
+	go work("markerter")
+
+	wait := 0
+	fmt.Scanln(&wait)
+
 }
 
 func work(s string) {
