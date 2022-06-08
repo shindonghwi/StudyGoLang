@@ -1,6 +1,8 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func main() {
 
@@ -24,5 +26,11 @@ func main() {
 
 	s := make([]int, 3)
 	fmt.Println(aSlice, bSlice, s)
+
+	// map
+	m := make(map[string]int)
+	m["hi"] = 3
+
+	fmt.Println(m, m["hi"])
 
 }
