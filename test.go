@@ -1,27 +1,18 @@
 package main
 
 import (
-	"errors"
 	"fmt"
-	"os"
+	"time"
 )
 
 func main() {
 
-	var f, err = os.Create("./defer.txt")
-
-	if err != nil {
-		panic(err)
-	}
-
-	defer f.Close()
-
-	fmt.Fprintln(f, "something")
+	work("hello world")
 }
 
-func a(b int) (int, error) {
-	if b >= 10 {
-		return -1, errors.New("Don't Exists")
+func work(s string) {
+	for i := 0; i < 3; i++ {
+		fmt.Println(s, "working", i, "hours")
+		time.Sleep(time.Second) // 1초 멈춤
 	}
-	return b, nil
 }
