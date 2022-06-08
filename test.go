@@ -30,7 +30,10 @@ func main() {
 	// map
 	m := make(map[string]int)
 	m["hi"] = 3
+	m["hi1"] = 32
 
 	fmt.Println(m, m["hi"])
 
+	value, exi := m["hi"]
+	fmt.Println(value, exi)
 }
