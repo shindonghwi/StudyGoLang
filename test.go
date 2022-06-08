@@ -16,10 +16,12 @@ func main() {
 
 	println(&a, &b)
 
-	var scanData int
+	var scanData1 int
+	var scanData2 int
+	var scanData3 int
 
-	fmt.Scan(&scanData)
+	fmt.Scan(&scanData1, &scanData2, &scanData3)
 
-	println("scanData: ", scanData)
+	println("scanData: ", scanData1, scanData2, scanData3)
 
 }
