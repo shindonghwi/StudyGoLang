@@ -1,39 +1,25 @@
 package main
 
-import (
-	"fmt"
-)
+type person struct {
+	name string
+	age  int
+	job  string
+}
 
 func main() {
 
-	// array
-	var a [5]int
-	var b [5]string
-	c := [5]int{1, 2, 3, 4, 5}
-	var d [2][3]int // 2차원
+	var myList []person
+	println(myList)
 
-	a[0] = 100
-	a[4] = 200
+	s1 := person{name: "DongHwi1", age: 31, job: "Developer1"}
+	s2 := person{name: "DongHwi2", age: 32, job: "Developer2"}
+	s3 := person{name: "DongHwi3", age: 33, job: "Developer3"}
 
-	fmt.Println(a)
-	fmt.Println(b)
-	fmt.Println(c)
-	fmt.Println(d)
+	myList = append(myList, s1)
+	myList = append(myList, s2)
+	myList = append(myList, s3)
 
-	// slice
-	var aSlice []int
-	var bSlice []string
-
-	s := make([]int, 3)
-	fmt.Println(aSlice, bSlice, s)
-
-	// map
-	m := make(map[string]int)
-	m["hi"] = 3
-	m["hi1"] = 32
-
-	fmt.Println(m, m["hi"])
-
-	value, exi := m["hi"]
-	fmt.Println(value, exi)
+	for i, p := range myList {
+		println("hello: ", i, p.name)
+	}
 }
