@@ -1,20 +1,25 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func main() {
 
-	var awesome int = 3
-	var cool string = "hello world"
+	var a = 5.0
+	b := 4.0
 
-	fmt.Println(awesome, cool)
+	println(a, b)
 
-	good := 7
-	fmt.Println(good)
+	a++
+	b--
 
-	awesome = 9999
-	cool = "world hello"
+	println(&a, &b)
 
-	fmt.Println(awesome, cool)
+	var scanData int
+
+	fmt.Scan(&scanData)
+
+	println("scanData: ", scanData)
 
 }
