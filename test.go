@@ -6,4 +6,14 @@ func main() {
 		println("data: ", i)
 	}
 
+	var payType string = "card"
+
+	if payType == "card" {
+		println("this is card")
+	} else if payType == "cash" {
+		println("this is cash")
+	} else {
+		println("this is else")
+	}
+
 }
