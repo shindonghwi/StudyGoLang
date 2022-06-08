@@ -1,36 +1,14 @@
 package main
 
-import (
-	"fmt"
-	"time"
-)
+import "github.com/gin-gonic/gin"
 
 func main() {
 
-	doneChannel := make(chan string, 5)
+	r := gin.Default()
 
-	// work("programmer")
-	// work("designer")
-	// work("producer")
-	// work("markerter")
+	r.GET("/ping", func(c *gin.Context) {
+		c.JSON(200, gin.H{"message": "pong"})
+	})
 
-	go work("programmer", doneChannel)
-	go work("designer", doneChannel)
-	go work("producer", doneChannel)
-	go work("markerter", doneChannel)
-	go work("donghwi", doneChannel)
-
-	for wait := range doneChannel {
-		fmt.Println(wait)
-	}
-
-}
-
-func work(s string, done chan string) {
-	for i := 0; i < 3; i++ {
-		fmt.Println(s, "working", i, "hours")
-		time.Sleep(time.Second) // 1초 멈춤
-	}
-
-	done <- s
+	r.Run()
 }
