@@ -9,4 +9,12 @@ func main() {
 
 	fmt.Println(awesome, cool)
 
+	good := 7
+	fmt.Println(good)
+
+	awesome = 9999
+	cool = "world hello"
+
+	fmt.Println(awesome, cool)
+
 }
